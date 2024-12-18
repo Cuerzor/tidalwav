@@ -313,8 +313,7 @@ namespace Tidalwav.Editor
         {
             var audioUtil = Assembly.GetAssembly(typeof(UnityEditor.Editor)).GetType("UnityEditor.AudioUtil");
             // ReSharper disable once PossibleNullReferenceException
-            return (int) audioUtil?.GetMethod("GetClipSamplePosition")?
-                .Invoke(null, new object[] {_wavClip});
+            return (int) audioUtil?.GetMethod("GetPreviewClipSamplePosition")?.Invoke(null, new object[] {});
         }
 
         private long SecondsToSamples(float seconds)
